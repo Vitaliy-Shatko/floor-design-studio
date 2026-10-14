@@ -13,6 +13,10 @@ import engineered from "@/assets/material-3.jpg";
 import carpet from "@/assets/material-4.jpg";
 import installation from "@/assets/material-5.jpg";
 
+import reviewAnna from "@/assets/review-0.jpg";
+import reviewMikhail from "@/assets/review-1.jpg";
+import reviewElena from "@/assets/review-2.jpg";
+
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
     { title: "ПОЛЬ — напольные покрытия для вашего дома" },

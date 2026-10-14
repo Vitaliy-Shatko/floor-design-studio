@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const navigation = [{ href: "#catalog", label: "Каталог" }, { href: "#about", label: "О компании" }, { href: "#reviews", label: "Отзывы" }, { href: "#contacts", label: "Контакты" }];
+const navigation = [{ href: "/catalog", label: "Каталог" }, { href: "#about", label: "О компании" }, { href: "#reviews", label: "Отзывы" }, { href: "#contacts", label: "Контакты" }];
 const benefits = [
   { icon: Layers3, title: "На любой вкус", text: "От натурального дерева до практичного кварцвинила" },
   { icon: ShieldCheck, title: "Уверенность в качестве", text: "Покрытия от проверенных производителей" },

@@ -59,8 +59,10 @@ function ContactsPage() {
 
           <div className="contacts-map">
             <iframe
-              title="Карта расположения шоурума"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=30.2800%2C59.9200%2C30.3800%2C59.9600&layer=mapnik&marker=59.9400%2C30.3300"
+              title="Карта расположения шоурума — Google Maps"
+              src={`https://www.google.com/maps/embed/v1/view?key=${import.meta.env['VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY']}&center=59.9400%2C30.3300&zoom=14&language=ru`}
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
               loading="lazy"
             />
             <p className="map-note">Карта показывает примерное расположение — точный адрес будет добавлен позже.</p>

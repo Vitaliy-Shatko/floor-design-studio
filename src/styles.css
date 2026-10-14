@@ -116,7 +116,7 @@
 .rating-label { margin-top:15px; color:var(--muted-foreground); font-size:11px; }
 .review-quote { margin:0; font-size:20px; font-weight:500; line-height:1.8; }
 .review-author { display:flex; gap:12px; align-items:center; margin-top:25px; }
-.avatar { width:43px; height:43px; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:var(--primary); font-size:12px; font-weight:700; }
+.avatar { width:43px; height:43px; border-radius:50%; object-fit:cover; border:2px solid var(--primary-foreground); box-shadow:0 2px 8px rgba(15,23,42,.12); }
 .review-author strong { font-size:12px; display:block; }
 .review-author span { display:block; font-size:10px; color:var(--muted-foreground); margin-top:5px; }
 .review-bottom { display:flex; justify-content:space-between; align-items:center; }

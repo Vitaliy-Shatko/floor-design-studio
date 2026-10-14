@@ -219,5 +219,13 @@
 .team-info h3 { font-size:16px; font-weight:650; margin:0 0 5px; }
 .team-role { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--primary); margin-bottom:10px; }
 .team-info p { font-size:11px; color:var(--muted-foreground); line-height:1.75; margin:0; }
+.catalog-page { overflow-x:clip; }
+.stats-band { background:linear-gradient(105deg, color-mix(in oklab,var(--primary) 88%,#000) 0%, var(--primary) 55%, color-mix(in oklab,var(--primary) 82%,#fff) 100%); color:var(--primary-foreground); margin-inline:calc(-50vw + 50%); padding-block:44px; margin-bottom:70px; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:26px; }
+.stat { display:grid; gap:9px; padding-left:22px; border-left:1px solid color-mix(in oklab,var(--primary-foreground) 28%,transparent); }
+.stat-value { font-size:40px; font-weight:650; line-height:1; letter-spacing:-.5px; }
+.stat-label { font-size:12px; line-height:1.6; opacity:.82; }
+@media(max-width:800px){ .stats-band{padding-block:32px;margin-bottom:45px}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}.stat-value{font-size:31px}.stat-label{font-size:11px} }
+@media(max-width:440px){ .stats-band{padding-block:26px}.stats-grid{grid-template-columns:1fr 1fr;gap:20px 12px}.stat{padding-left:14px}.stat-value{font-size:26px}.stat-label{font-size:10px} }
 @media(max-width:900px){ .contacts-layout{grid-template-columns:1fr}.history-grid{grid-template-columns:1fr;gap:28px}.team-grid{grid-template-columns:1fr 1fr;gap:16px}.page-title{font-size:30px} }
 @media(max-width:440px){ .team-grid{grid-template-columns:1fr}.team-photo{height:240px}.contacts-map iframe{height:320px}.page-title{font-size:26px} }

@@ -24,6 +24,13 @@ const team = [
   { name: "Игорь Лебедев", role: "Руководитель укладки", photo: teamInstaller, text: "Возглавляет бригаду укладчиков. Следит за подготовкой основания и качеством каждого шва." },
 ];
 
+const stats = [
+  { value: "15", label: "лет на рынке" },
+  { value: "10 000+", label: "довольных клиентов" },
+  { value: "50+", label: "брендов-партнеров" },
+  { value: "500+", label: "видов покрытий" },
+];
+
 function AboutPage() {
   return (
     <div className="catalog-page">
@@ -45,6 +52,17 @@ function AboutPage() {
             <p>Поэтому мы решили делать всё иначе — не продавать «что есть», а подбирать «что подходит». Сначала слушаем, как вы живёте, а потом предлагаем варианты: от практичного кварц-винила до тёплой инженерной доски.</p>
             <p>Сегодня ПОЛЬ — это шоурум с сотнями образцов, своя служба доставки и бригада укладчиков. Но главное не изменилось: мы по-прежнему начинаем с разговора о вашем доме.</p>
             <p className="history-note">Текст демонстрационный — пришлите настоящую историю компании, и мы заменим его.</p>
+          </div>
+        </section>
+
+        <section className="stats-band">
+          <div className="site-container stats-grid">
+            {stats.map(stat => (
+              <div key={stat.label} className="stat">
+                <strong className="stat-value">{stat.value}</strong>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </section>
 

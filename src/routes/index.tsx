@@ -57,7 +57,7 @@ function Index() {
   const [selection, setSelection] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string | undefined; phone?: string | undefined }>({});
   const [notice, setNotice] = useState("");
   useEffect(() => {
     let previous = window.scrollY;
@@ -83,6 +83,7 @@ function Index() {
     setNotice(next.name || next.phone ? "" : "Отправка пока не подключена. Заявка не отправлена — для связи необходимо добавить контакты магазина.");
   };
   const review = reviews[reviewIndex];
+  if (!review) return null;
   return (
     <>
       <header className={`site-header${hidden ? " is-hidden" : ""}`}>

@@ -229,7 +229,7 @@
 @media(max-width:440px){ .stats-band{padding-block:26px}.stats-grid{grid-template-columns:1fr 1fr;gap:20px 12px}.stat{padding-left:14px}.stat-value{font-size:26px}.stat-label{font-size:10px} }
 @media(max-width:900px){ .contacts-layout{grid-template-columns:1fr}.history-grid{grid-template-columns:1fr;gap:28px}.team-grid{grid-template-columns:1fr 1fr;gap:16px}.page-title{font-size:30px} }
 @media(max-width:440px){ .team-grid{grid-template-columns:1fr}.team-photo{height:240px}.contacts-map iframe{height:320px}.page-title{font-size:26px} }
-.calculator-layout { display:grid; grid-template-columns:minmax(0,1fr) 350px; gap:36px; align-items:start; }
+.calculator-layout { display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:36px; align-items:start; }
 .calculator-form { border:1px solid var(--border); border-radius:7px; padding:26px 26px 28px; background:var(--card); display:grid; gap:18px; }
 .calculator-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
 .calculator-check-row { display:flex; align-items:center; gap:10px; font-size:13px; font-weight:500; cursor:pointer; }
@@ -252,11 +252,15 @@
 .calculator-mode { display:flex; gap:8px; }
 .calculator-mode button { flex:1; padding:13px 14px; border:1px solid var(--border); border-radius:7px; background:var(--background); font-size:12px; font-weight:600; color:var(--muted-foreground); cursor:pointer; transition:background .2s,color .2s,border-color .2s; }
 .calculator-mode button.is-active { background:var(--primary); border-color:var(--primary); color:var(--primary-foreground); }
+.calculator-preview-card { margin:0; padding:12px 12px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); box-shadow:var(--soft-shadow); }
+.calculator-preview-caption { display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:9px; }
+.calculator-preview-label { font-size:10px; font-weight:700; letter-spacing:.6px; text-transform:uppercase; color:var(--muted-foreground); }
+.calculator-preview-caption strong { font-size:13px; font-weight:750; color:var(--primary); text-align:right; }
 .calculator-preview { width:100%; height:auto; display:block; }
-.calc-room-bg { fill:var(--card); }
-.calc-plank { fill:var(--secondary); stroke:var(--border); stroke-width:1; }
-.calc-chevron { stroke:var(--primary); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; opacity:.75; }
-.calc-room-border { fill:none; stroke:var(--muted-foreground); stroke-width:1.5; opacity:.5; }
+.calc-room-bg { fill:oklch(.9 .014 260); }
+.calc-plank { fill:oklch(.82 .075 75); stroke:oklch(.5 .1 60); stroke-width:1.4; }
+.calc-chevron { stroke:var(--primary); stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
+.calc-room-border { fill:none; stroke:var(--foreground); stroke-width:2; opacity:.8; }
 .calculator-contact { display:grid; gap:10px; padding-top:14px; border-top:1px solid var(--border); }
 .calculator-contact-title { font-size:13px; font-weight:700; margin:0; }
 .calculator-contact-note { font-size:10px; color:var(--muted-foreground); line-height:1.8; margin:0; }

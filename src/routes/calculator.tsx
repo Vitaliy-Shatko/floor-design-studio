@@ -810,7 +810,15 @@ function CalculatorPage() {
               <h2 className="calculator-result-title">Смета</h2>
               {result ? (
                 <>
-                  {preview && <LayoutPreviewSvg model={preview} />}
+                  {preview && (
+                    <figure className="calculator-preview-card">
+                      <figcaption className="calculator-preview-caption">
+                        <span className="calculator-preview-label">Схема укладки</span>
+                        <strong>{layoutLabels[result.layout]}</strong>
+                      </figcaption>
+                      <LayoutPreviewSvg model={preview} />
+                    </figure>
+                  )}
                   <div className="calculator-result-row">
                     <span>Площадь комнаты</span>
                     <strong>{formatArea(result.areaM2)}</strong>

@@ -4,21 +4,23 @@ export type FloorType = (typeof floorTypes)[number];
 export type CatalogProduct = {
   id: string; title: string; type: FloorType; brand: string; price: number;
   inStock: boolean; wearClass: string; waterproof: boolean; thicknessMm: number; image: string;
+  packCoverageM2: number;
+  planksPerPack?: number;
 };
 
 export const catalogProducts: CatalogProduct[] = [
-  { id: "l1", title: "Дуб Альпийский", type: "Ламинат", brand: "Kronospan", price: 1290, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 8, image: "laminate" },
-  { id: "l2", title: "Орех Классик", type: "Ламинат", brand: "Quick-Step", price: 2150, inStock: false, wearClass: "34", waterproof: true, thicknessMm: 12, image: "laminate" },
-  { id: "p1", title: "Дуб Натур", type: "Паркетная доска", brand: "Tarkett", price: 3890, inStock: true, wearClass: "32", waterproof: false, thicknessMm: 14, image: "parquet" },
-  { id: "p2", title: "Ясень Белый", type: "Паркетная доска", brand: "Barlinek", price: 4590, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 14, image: "parquet" },
-  { id: "v1", title: "Серый Туман", type: "Виниловый пол", brand: "Tarkett", price: 1790, inStock: true, wearClass: "32", waterproof: true, thicknessMm: 3, image: "vinyl" },
-  { id: "v2", title: "Сосна Скандинавская", type: "Виниловый пол", brand: "Quick-Step", price: 2390, inStock: false, wearClass: "33", waterproof: true, thicknessMm: 4, image: "vinyl" },
-  { id: "q1", title: "Дуб Медовый", type: "Кварц-винил", brand: "Alpine Floor", price: 2490, inStock: true, wearClass: "43", waterproof: true, thicknessMm: 4, image: "quartz" },
-  { id: "q2", title: "Бетон Светлый", type: "Кварц-винил", brand: "Alpine Floor", price: 2790, inStock: true, wearClass: "43", waterproof: true, thicknessMm: 6, image: "quartz" },
-  { id: "e1", title: "Дуб Рустик", type: "Инженерная доска", brand: "Barlinek", price: 5490, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 15, image: "engineered" },
-  { id: "e2", title: "Дуб Копчёный", type: "Инженерная доска", brand: "Kronospan", price: 6290, inStock: false, wearClass: "33", waterproof: false, thicknessMm: 20, image: "engineered" },
-  { id: "c1", title: "Натуральная пробка", type: "Пробковое покрытие", brand: "Wicanders", price: 3190, inStock: true, wearClass: "31", waterproof: false, thicknessMm: 10.5, image: "cork" },
-  { id: "c2", title: "Пробка Аква", type: "Пробковое покрытие", brand: "Wicanders", price: 3690, inStock: false, wearClass: "32", waterproof: true, thicknessMm: 6, image: "cork" },
+  { id: "l1", title: "Дуб Альпийский", type: "Ламинат", brand: "Kronospan", price: 1290, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 8, packCoverageM2: 2.22, planksPerPack: 8, image: "laminate" },
+  { id: "l2", title: "Орех Классик", type: "Ламинат", brand: "Quick-Step", price: 2150, inStock: false, wearClass: "34", waterproof: true, thicknessMm: 12, packCoverageM2: 2.18, planksPerPack: 7, image: "laminate" },
+  { id: "p1", title: "Дуб Натур", type: "Паркетная доска", brand: "Tarkett", price: 3890, inStock: true, wearClass: "32", waterproof: false, thicknessMm: 14, packCoverageM2: 2.24, planksPerPack: 7, image: "parquet" },
+  { id: "p2", title: "Ясень Белый", type: "Паркетная доска", brand: "Barlinek", price: 4590, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 14, packCoverageM2: 2.38, planksPerPack: 7, image: "parquet" },
+  { id: "v1", title: "Серый Туман", type: "Виниловый пол", brand: "Tarkett", price: 1790, inStock: true, wearClass: "32", waterproof: true, thicknessMm: 3, packCoverageM2: 2.2, planksPerPack: 10, image: "vinyl" },
+  { id: "v2", title: "Сосна Скандинавская", type: "Виниловый пол", brand: "Quick-Step", price: 2390, inStock: false, wearClass: "33", waterproof: true, thicknessMm: 4, packCoverageM2: 2.31, planksPerPack: 8, image: "vinyl" },
+  { id: "q1", title: "Дуб Медовый", type: "Кварц-винил", brand: "Alpine Floor", price: 2490, inStock: true, wearClass: "43", waterproof: true, thicknessMm: 4, packCoverageM2: 2.2, planksPerPack: 10, image: "quartz" },
+  { id: "q2", title: "Бетон Светлый", type: "Кварц-винил", brand: "Alpine Floor", price: 2790, inStock: true, wearClass: "43", waterproof: true, thicknessMm: 6, packCoverageM2: 2.16, planksPerPack: 8, image: "quartz" },
+  { id: "e1", title: "Дуб Рустик", type: "Инженерная доска", brand: "Barlinek", price: 5490, inStock: true, wearClass: "33", waterproof: false, thicknessMm: 15, packCoverageM2: 2.4, planksPerPack: 6, image: "engineered" },
+  { id: "e2", title: "Дуб Копчёный", type: "Инженерная доска", brand: "Kronospan", price: 6290, inStock: false, wearClass: "33", waterproof: false, thicknessMm: 20, packCoverageM2: 2.52, planksPerPack: 6, image: "engineered" },
+  { id: "c1", title: "Натуральная пробка", type: "Пробковое покрытие", brand: "Wicanders", price: 3190, inStock: true, wearClass: "31", waterproof: false, thicknessMm: 10.5, packCoverageM2: 1.98, planksPerPack: 12, image: "cork" },
+  { id: "c2", title: "Пробка Аква", type: "Пробковое покрытие", brand: "Wicanders", price: 3690, inStock: false, wearClass: "32", waterproof: true, thicknessMm: 6, packCoverageM2: 1.8, planksPerPack: 10, image: "cork" },
 ];
 
 export type CatalogFilters = {

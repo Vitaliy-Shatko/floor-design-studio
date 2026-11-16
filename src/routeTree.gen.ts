@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as CatalogRouteImport } from './routes/catalog'
 import { Route as ContactsRouteImport } from './routes/contacts'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatalogRoute = CatalogRouteImport.update({
@@ -44,6 +50,7 @@ const FaqRoute = FaqRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/catalog': typeof CatalogRoute
   '/contacts': typeof ContactsRoute
   '/faq': typeof FaqRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/catalog': typeof CatalogRoute
   '/contacts': typeof ContactsRoute
   '/faq': typeof FaqRoute
@@ -59,21 +67,30 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/catalog': typeof CatalogRoute
   '/contacts': typeof ContactsRoute
   '/faq': typeof FaqRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/catalog' | '/contacts' | '/faq'
+  fullPaths: '/' | '/about' | '/calculator' | '/catalog' | '/contacts' | '/faq'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/catalog' | '/contacts' | '/faq'
-  id: '__root__' | '/' | '/about' | '/catalog' | '/contacts' | '/faq'
+  to: '/' | '/about' | '/calculator' | '/catalog' | '/contacts' | '/faq'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/calculator'
+    | '/catalog'
+    | '/contacts'
+    | '/faq'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CalculatorRoute: typeof CalculatorRoute
   CatalogRoute: typeof CatalogRoute
   ContactsRoute: typeof ContactsRoute
   FaqRoute: typeof FaqRoute
@@ -93,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catalog': {
@@ -122,6 +146,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CalculatorRoute: CalculatorRoute,
   CatalogRoute: CatalogRoute,
   ContactsRoute: ContactsRoute,
   FaqRoute: FaqRoute,

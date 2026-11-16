@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Layers3, SlidersHorizontal, X } from "lucide-react";
+import { Calculator, Layers3, SlidersHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { catalogProducts, emptyFilters, filterProducts, floorTypes, formatThickness, type CatalogFilters } from "@/lib/catalog";
@@ -55,7 +55,7 @@ function CatalogPage() {
     <div className="catalog-page">
       <header className="site-header"><div className="site-container header-inner">
         <Link to="/" className="brand" aria-label="ПОЛЬ — на главную"><Layers3 className="brand-mark" strokeWidth={1.7} /><div><div className="brand-name">ПОЛЬ<span className="text-primary">.</span></div><div className="brand-subtitle">напольные покрытия</div></div></Link>
-        <div className="header-right"><nav className="desktop-nav"><Link to="/">Главная</Link><Link to="/catalog" className="text-primary">Каталог</Link><Link to="/faq">Вопросы</Link><Link to="/about">О компании</Link><Link to="/contacts">Контакты</Link></nav>
+        <div className="header-right"><nav className="desktop-nav"><Link to="/">Главная</Link><Link to="/catalog" className="text-primary">Каталог</Link><Link to="/calculator">Калькулятор</Link><Link to="/faq">Вопросы</Link><Link to="/about">О компании</Link><Link to="/contacts">Контакты</Link></nav>
           <Button asChild variant="cta" className="header-cta"><Link to="/" hash="request">Оставить заявку</Link></Button></div>
       </div></header>
 
@@ -94,6 +94,14 @@ function CatalogPage() {
                   <p>{p.brand} · класс {p.wearClass} · {formatThickness(p.thicknessMm, unit)}{p.waterproof ? " · влагостойкий" : ""}</p>
                   <div className="catalog-card-bottom"><strong>{p.price.toLocaleString("ru-RU")} ₽/м²</strong>
                     <span className={p.inStock ? "stock-yes" : "stock-no"}>{p.inStock ? "В наличии" : "Нет в наличии"}</span></div>
+                      <Link
+                        className="catalog-calc-link"
+                        to="/calculator"
+                        search={{ product: p.id }}
+                      >
+                        <Calculator size={14} />
+                        Рассчитать на комнату
+                      </Link>
                 </div>
               </article>))}</div>}
           </section>

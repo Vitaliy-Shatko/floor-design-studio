@@ -357,12 +357,10 @@ function CalculatorPage() {
     <div className="catalog-page">
       <header className="site-header">
         <div className="site-container header-inner">
-          <Link to="/" className="brand" aria-label="ПОЛЬ — на главную">
+          <Link to="/" className="brand" aria-label="ПолМастер — на главную">
             <Layers3 className="brand-mark" strokeWidth={1.7} />
             <div>
-              <div className="brand-name">
-                ПОЛЬ<span className="text-primary">.</span>
-              </div>
+              <div className="brand-name">ПолМастер</div>
               <div className="brand-subtitle">напольные покрытия</div>
             </div>
           </Link>

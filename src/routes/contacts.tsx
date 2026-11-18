@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contacts")({
   head: () => ({ meta: [
     { title: "Контакты — Полмастер" },
-    { name: "description", content: "Контакты магазина напольных покрытий ПОЛЬ: телефон, адрес шоурума на карте, соцсети и данные об организации." },
+    { name: "description", content: "Контакты магазина напольных покрытий ПолМастер: телефон, адрес шоурума на карте, соцсети и данные об организации." },
     { property: "og:title", content: "Контакты — Полмастер" },
     { property: "og:description", content: "Телефон, адрес шоурума, соцсети и реквизиты магазина Полмастер." },
     { property: "og:type", content: "website" },
@@ -18,7 +18,7 @@ function ContactsPage() {
   return (
     <div className="catalog-page">
       <header className="site-header"><div className="site-container header-inner">
-        <Link to="/" className="brand" aria-label="ПОЛЬ — на главную"><Layers3 className="brand-mark" strokeWidth={1.7} /><div><div className="brand-name">ПОЛЬ<span className="text-primary">.</span></div><div className="brand-subtitle">напольные покрытия</div></div></Link>
+        <Link to="/" className="brand" aria-label="ПолМастер — на главную"><Layers3 className="brand-mark" strokeWidth={1.7} /><div><div className="brand-name">ПолМастер</div><div className="brand-subtitle">напольные покрытия</div></div></Link>
         <div className="header-right"><nav className="desktop-nav"><Link to="/">Главная</Link><Link to="/catalog">Каталог</Link><Link to="/calculator">Калькулятор</Link><Link to="/faq">Вопросы</Link><Link to="/about">О компании</Link><Link to="/contacts" className="text-primary">Контакты</Link></nav>
           <Button asChild variant="cta" className="header-cta"><Link to="/" hash="request">Оставить заявку</Link></Button></div>
       </div></header>
@@ -53,7 +53,7 @@ function ContactsPage() {
             </div>
             <div className="contact-card contact-org">
               <h2>Данные об организации</h2>
-              <p>Название «ПОЛЬ» — демонстрационное. Реквизиты организации (ИНН, ОГРН, юридический адрес) будут добавлены после того, как вы пришлёте реальные данные.</p>
+              <p>Название «ПолМастер» — демонстрационное. Реквизиты организации (ИНН, ОГРН, юридический адрес) будут добавлены после того, как вы пришлёте реальные данные.</p>
             </div>
           </div>
 

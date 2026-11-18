@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contacts")({
   head: () => ({ meta: [
-    { title: "Контакты — ПОЛЬ" },
+    { title: "Контакты — Полмастер" },
     { name: "description", content: "Контакты магазина напольных покрытий ПОЛЬ: телефон, адрес шоурума на карте, соцсети и данные об организации." },
-    { property: "og:title", content: "Контакты — ПОЛЬ" },
-    { property: "og:description", content: "Телефон, адрес шоурума, соцсети и реквизиты магазина ПОЛЬ." },
+    { property: "og:title", content: "Контакты — Полмастер" },
+    { property: "og:description", content: "Телефон, адрес шоурума, соцсети и реквизиты магазина Полмастер." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

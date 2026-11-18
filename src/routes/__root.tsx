@@ -78,10 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ПОЛЬ — напольные покрытия" },
-      { name: "description", content: "Напольные покрытия для дома: ламинат, паркет, кварцвинил и помощь в подборе." },
-      { property: "og:title", content: "ПОЛЬ — напольные покрытия" },
-      { property: "og:description", content: "Красивый пол — начало уютного дома." },
+      { title: "Напольные покрытия в Москве. Полмастер — 15+ лет опыта" },
+      {
+        name: "description",
+        content:
+          "Купить ламинат, паркет, виниловый пол от 500 р/м2. Бесплатный замер, доставка. 5000+ довольных клиентов, 50+ брендов в наличии",
+      },
+      { property: "og:title", content: "Напольные покрытия в Москве. Полмастер — 15+ лет опыта" },
+      {
+        property: "og:description",
+        content:
+          "Купить ламинат, паркет, виниловый пол от 500 р/м2. Бесплатный замер, доставка. 5000+ довольных клиентов, 50+ брендов в наличии",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

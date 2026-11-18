@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({ meta: [
-    { title: "Вопросы и ответы — ПОЛЬ" },
+    { title: "Вопросы и ответы — Полмастер" },
     { name: "description", content: "Ответы на частые вопросы о напольных покрытиях: выбор, укладка, уход, доставка и гарантия." },
-    { property: "og:title", content: "Вопросы и ответы — ПОЛЬ" },
+    { property: "og:title", content: "Вопросы и ответы — Полмастер" },
     { property: "og:description", content: "Отвечаем на популярные вопросы о напольных покрытиях." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

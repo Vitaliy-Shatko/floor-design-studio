@@ -15,9 +15,9 @@ const images: Record<string, string> = { laminate, parquet, quartz, engineered, 
 
 export const Route = createFileRoute("/catalog")({
   head: () => ({ meta: [
-    { title: "Каталог напольных покрытий — ПОЛЬ" },
-    { name: "description", content: "Все товары ПОЛЬ: ламинат, паркетная доска, винил, кварц-винил, инженерная доска и пробка с фильтрами по цене и характеристикам." },
-    { property: "og:title", content: "Каталог напольных покрытий — ПОЛЬ" },
+    { title: "Каталог напольных покрытий — Полмастер" },
+    { name: "description", content: "Все товары Полмастер: ламинат, паркетная доска, винил, кварц-винил, инженерная доска и пробка с фильтрами по цене и характеристикам." },
+    { property: "og:title", content: "Каталог напольных покрытий — Полмастер" },
     { property: "og:description", content: "Подберите покрытие по типу, бренду, классу износостойкости и цене." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

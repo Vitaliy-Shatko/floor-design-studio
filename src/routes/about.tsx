@@ -8,10 +8,10 @@ import teamInstaller from "@/assets/team-2.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
-    { title: "О компании — ПОЛЬ" },
-    { name: "description", content: "История магазина напольных покрытий ПОЛЬ и команда, которая помогает выбирать и укладывать полы." },
-    { property: "og:title", content: "О компании — ПОЛЬ" },
-    { property: "og:description", content: "Наша история и команда магазина напольных покрытий ПОЛЬ." },
+    { title: "О компании — Полмастер" },
+    { name: "description", content: "История магазина напольных покрытий Полмастер и команда, которая помогает выбирать и укладывать полы." },
+    { property: "og:title", content: "О компании — Полмастер" },
+    { property: "og:description", content: "Наша история и команда магазина напольных покрытий Полмастер." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

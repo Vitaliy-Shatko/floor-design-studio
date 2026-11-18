@@ -19,10 +19,10 @@ import reviewElena from "@/assets/review-2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "ПОЛЬ — напольные покрытия для вашего дома" },
-    { name: "description", content: "Ламинат, паркет, кварцвинил и ковролин. Подберём напольное покрытие под ваш интерьер и поможем с укладкой." },
-    { property: "og:title", content: "ПОЛЬ — напольные покрытия для вашего дома" },
-    { property: "og:description", content: "Красивый пол — начало уютного дома. Найдите своё покрытие в ПОЛЬ." },
+    { title: "Напольные покрытия в Москве. Полмастер — 15+ лет опыта" },
+    { name: "description", content: "Купить ламинат, паркет, виниловый пол от 500 р/м2. Бесплатный замер, доставка. 5000+ довольных клиентов, 50+ брендов в наличии" },
+    { property: "og:title", content: "Напольные покрытия в Москве. Полмастер — 15+ лет опыта" },
+    { property: "og:description", content: "Купить ламинат, паркет, виниловый пол от 500 р/м2. Бесплатный замер, доставка. 5000+ довольных клиентов, 50+ брендов в наличии" },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

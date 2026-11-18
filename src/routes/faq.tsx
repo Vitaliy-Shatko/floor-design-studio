@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, Layers3 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { faqSchema } from "@/lib/schema";
@@ -38,6 +39,7 @@ function FaqPage() {
       </div></header>
 
       <main className="site-container catalog-main faq-main">
+        <Breadcrumbs items={[{ name: "Вопросы и ответы" }]} />
         <div className="eyebrow">Вопросы и ответы</div>
         <h1 className="page-title">Часто задаваемые вопросы</h1>
         <p className="page-lead">Собрали ответы на вопросы, которые нам задают чаще всего. Не нашли свой — оставьте заявку, и мы всё расскажем.</p>

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layers3 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import showroom from "@/assets/flooring-showroom.jpg";
 import teamDirector from "@/assets/team-0.jpg";
@@ -41,6 +42,7 @@ function AboutPage() {
       </div></header>
 
       <main className="site-container catalog-main">
+        <Breadcrumbs items={[{ name: "О компании" }]} />
         <div className="eyebrow">О компании</div>
         <h1 className="page-title">Мы — ПолМастер. И мы знаем о полах всё.</h1>
 

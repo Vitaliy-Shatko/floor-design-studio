@@ -156,6 +156,13 @@
 }
 @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important} }
 .catalog-main { padding-top:130px; padding-bottom:80px; }
+.breadcrumbs { margin:0 0 18px; }
+.breadcrumbs-list { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; font-size:11px; color:var(--muted-foreground); }
+.breadcrumbs-item { display:flex; align-items:center; gap:8px; }
+.breadcrumbs-link { color:var(--muted-foreground); transition:color .2s; }
+.breadcrumbs-link:hover { color:var(--primary); }
+.breadcrumbs-current { color:var(--foreground); font-weight:550; }
+.breadcrumbs-sep { color:var(--muted-foreground); opacity:.5; }
 .catalog-top { display:flex; justify-content:space-between; align-items:center; gap:20px; margin:14px 0 30px; }
 .catalog-top h1 { font-size:40px; font-weight:650; margin:0; }
 .filters-toggle { display:none; }

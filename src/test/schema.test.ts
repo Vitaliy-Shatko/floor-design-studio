@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { catalogProducts } from "@/lib/catalog";
-import { catalogSchema, faqSchema, serializeSchema } from "@/lib/schema";
+import { breadcrumbSchema, catalogSchema, faqSchema, serializeSchema } from "@/lib/schema";
 
 describe("schema", () => {
   it("escapes opening angle brackets without corrupting data", () => {
@@ -34,5 +34,20 @@ describe("schema", () => {
     );
     const outOfStock = availability.filter((a) => a === "https://schema.org/OutOfStock");
     expect(outOfStock).toHaveLength(catalogProducts.filter((p) => !p.inStock).length);
+  });
+  it("builds BreadcrumbList with absolute item urls except the last crumb", () => {
+    const s = breadcrumbSchema([{ name: "Главная", path: "/" }, { name: "Каталог" }]);
+    expect(s["@type"]).toBe("BreadcrumbList");
+    expect(s.itemListElement[0]).toEqual({
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://example.com/",
+    });
+    expect(s.itemListElement[1]).toEqual({
+      "@type": "ListItem",
+      position: 2,
+      name: "Каталог",
+    });
   });
 });

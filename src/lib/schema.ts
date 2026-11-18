@@ -3,6 +3,7 @@ import type { CatalogProduct } from "@/lib/catalog";
 export type FaqItem = { q: string; a: string };
 
 const SITE_NAME = "ПолМастер";
+const SITE_URL = "https://example.com";
 
 export function serializeSchema(data: object) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -50,6 +51,32 @@ export type CatalogSchema = {
   name: string;
   itemListElement: { "@type": "ListItem"; position: number; item: ProductSchema }[];
 };
+
+export type CrumbPath = "/" | "/catalog" | "/calculator" | "/faq" | "/about" | "/contacts";
+
+export type Crumb = { name: string; path?: CrumbPath };
+
+export type BreadcrumbListSchema = {
+  "@context": "https://schema.org";
+  "@type": "BreadcrumbList";
+  itemListElement: { "@type": "ListItem"; position: number; name: string; item?: string }[];
+};
+
+export function breadcrumbSchema(crumbs: readonly Crumb[]): BreadcrumbListSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((crumb, i) => {
+      const isLast = i === crumbs.length - 1;
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        name: crumb.name,
+        ...(crumb.path && !isLast ? { item: `${SITE_URL}${crumb.path}` } : {}),
+      };
+    }),
+  };
+}
 
 export function catalogSchema(products: readonly CatalogProduct[]): CatalogSchema {
   return {

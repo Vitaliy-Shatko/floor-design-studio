@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Layers3 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import {
   Form,
   FormControl,
@@ -385,6 +386,7 @@ function CalculatorPage() {
       </header>
 
       <main className="site-container catalog-main">
+        <Breadcrumbs items={[{ name: "Калькулятор" }]} />
         <div className="eyebrow">Калькулятор</div>
         <h1 className="page-title">Сколько покрытия нужно</h1>
         <p className="page-lead">

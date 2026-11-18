@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Layers3, MapPin, Phone, Send } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contacts")({
@@ -24,6 +25,7 @@ function ContactsPage() {
       </div></header>
 
       <main className="site-container catalog-main">
+        <Breadcrumbs items={[{ name: "Контакты" }]} />
         <div className="eyebrow">Контакты</div>
         <h1 className="page-title">Как нас найти</h1>
         <p className="page-lead">Приходите в шоурум посмотреть образцы вживую или свяжитесь с нами удобным способом.</p>

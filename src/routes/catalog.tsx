@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Calculator, Layers3, SlidersHorizontal, X } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -63,6 +64,7 @@ function CatalogPage() {
       </div></header>
 
       <main className="site-container catalog-main">
+        <Breadcrumbs items={[{ name: "Каталог" }]} />
         <div className="eyebrow">Каталог</div>
         <div className="catalog-top"><h1>Все напольные покрытия</h1>
           <Button variant="outline" className="filters-toggle" onClick={() => setOpen(!open)}>{open ? <X /> : <SlidersHorizontal />} Фильтры</Button></div>

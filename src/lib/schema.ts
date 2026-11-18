@@ -1,0 +1,75 @@
+import type { CatalogProduct } from "@/lib/catalog";
+
+export type FaqItem = { q: string; a: string };
+
+const SITE_NAME = "ПолМастер";
+
+export function serializeSchema(data: object) {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+type QuestionSchema = {
+  "@type": "Question";
+  name: string;
+  acceptedAnswer: { "@type": "Answer"; text: string };
+};
+
+export type FaqPageSchema = {
+  "@context": "https://schema.org";
+  "@type": "FAQPage";
+  mainEntity: QuestionSchema[];
+};
+
+export function faqSchema(items: readonly FaqItem[]): FaqPageSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
+
+type ProductSchema = {
+  "@type": "Product";
+  name: string;
+  brand: { "@type": "Brand"; name: string };
+  offers: {
+    "@type": "Offer";
+    priceCurrency: "RUB";
+    price: number;
+    availability: "https://schema.org/InStock" | "https://schema.org/OutOfStock";
+  };
+};
+
+export type CatalogSchema = {
+  "@context": "https://schema.org";
+  "@type": "ItemList";
+  name: string;
+  itemListElement: { "@type": "ListItem"; position: number; item: ProductSchema }[];
+};
+
+export function catalogSchema(products: readonly CatalogProduct[]): CatalogSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Каталог напольных покрытий — ${SITE_NAME}`,
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: `${p.type} ${p.title}`,
+        brand: { "@type": "Brand", name: p.brand },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "RUB",
+          price: p.price,
+          availability: p.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+        },
+      },
+    })),
+  };
+}

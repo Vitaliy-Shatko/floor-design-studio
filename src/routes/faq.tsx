@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, Layers3 } from "lucide-react";
+import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
+import { faqSchema } from "@/lib/schema";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({ meta: [
@@ -28,6 +30,7 @@ function FaqPage() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div className="catalog-page">
+      <JsonLd data={faqSchema(faqs)} />
       <header className="site-header"><div className="site-container header-inner">
         <Link to="/" className="brand" aria-label="ПолМастер — на главную"><Layers3 className="brand-mark" strokeWidth={1.7} /><div><div className="brand-name">ПолМастер</div><div className="brand-subtitle">напольные покрытия</div></div></Link>
         <div className="header-right"><nav className="desktop-nav"><Link to="/">Главная</Link><Link to="/catalog">Каталог</Link><Link to="/calculator">Калькулятор</Link><Link to="/faq" className="text-primary">Вопросы</Link><Link to="/about">О компании</Link><Link to="/contacts">Контакты</Link></nav>

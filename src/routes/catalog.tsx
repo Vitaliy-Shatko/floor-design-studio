@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Calculator, Layers3, SlidersHorizontal, X } from "lucide-react";
+import { JsonLd } from "@/components/json-ld";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { catalogProducts, emptyFilters, filterProducts, floorTypes, formatThickness, type CatalogFilters } from "@/lib/catalog";
+import { catalogSchema } from "@/lib/schema";
 import laminate from "@/assets/material-0.jpg";
 import parquet from "@/assets/material-1.jpg";
 import quartz from "@/assets/material-2.jpg";
@@ -53,6 +55,7 @@ function CatalogPage() {
 
   return (
     <div className="catalog-page">
+      <JsonLd data={catalogSchema(catalogProducts)} />
       <header className="site-header"><div className="site-container header-inner">
         <Link to="/" className="brand" aria-label="ПолМастер — на главную"><Layers3 className="brand-mark" strokeWidth={1.7} /><div><div className="brand-name">ПолМастер</div><div className="brand-subtitle">напольные покрытия</div></div></Link>
         <div className="header-right"><nav className="desktop-nav"><Link to="/">Главная</Link><Link to="/catalog" className="text-primary">Каталог</Link><Link to="/calculator">Калькулятор</Link><Link to="/faq">Вопросы</Link><Link to="/about">О компании</Link><Link to="/contacts">Контакты</Link></nav>
